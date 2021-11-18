@@ -14,6 +14,7 @@ const CityItem = ({ city, onPress }: CityItemProps) => (
   <View style={{ marginVertical: 8, marginHorizontal: 16 }}>
     <Card>
       <TouchableHighlight
+        testID={city.id}
         activeOpacity={0.6}
         underlayColor="#DDDDDD"
         onPress={() => onPress(city)}
