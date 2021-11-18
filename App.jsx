@@ -2,6 +2,8 @@ import React from 'react';
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
+import { Provider as PaperProvider } from 'react-native-paper';
+import AwesomeIcon from 'react-native-vector-icons/FontAwesome5';
 import CityScreen from './src/screens/CityScreen';
 import HomeScreen from './src/screens/HomeScreen';
 
@@ -15,12 +17,30 @@ const client = new ApolloClient({
 export default function App() {
   return (
     <ApolloProvider client={client}>
-      <NavigationContainer>
-        <Stack.Navigator initialRouteName="Home">
-          <Stack.Screen name="Home" component={HomeScreen} />
-          <Stack.Screen name="City" component={CityScreen} />
-        </Stack.Navigator>
-      </NavigationContainer>
+      <PaperProvider
+        settings={{
+          icon: props => <AwesomeIcon {...props} />,
+        }}
+      >
+        <NavigationContainer>
+          <Stack.Navigator initialRouteName="home">
+            <Stack.Screen
+              name="home"
+              component={HomeScreen}
+              options={{
+                title: 'Ank Weather',
+              }}
+            />
+            <Stack.Screen
+              name="summary"
+              component={CityScreen}
+              options={{
+                title: 'Detalle',
+              }}
+            />
+          </Stack.Navigator>
+        </NavigationContainer>
+      </PaperProvider>
     </ApolloProvider>
   );
 }
