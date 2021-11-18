@@ -1,11 +1,25 @@
 import { Weather } from './weather';
 
 export type City = {
-  id: number;
+  id: string;
   name: string;
   country: string;
   coord: Coordinates;
   weather: Weather;
+};
+
+export type CityLite = {
+  id: string;
+  name: string;
+  weather: {
+    summary: {
+      icon: string;
+      description: string;
+    };
+    temperature: {
+      actual: number;
+    };
+  };
 };
 
 type Coordinates = {

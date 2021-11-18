@@ -1,11 +1,11 @@
 import React from 'react';
 import { FlatList } from 'react-native';
-import { City } from '../../types/city';
+import { CityLite } from '../../types/city';
 import CityItem from './CityItem';
 
 interface CitiesProps {
-  cities: City[];
-  onNavigate: (city: City) => void;
+  cities: CityLite[];
+  onNavigate: (city: CityLite) => void;
 }
 
 const CityList = ({ cities, onNavigate }: CitiesProps) => (

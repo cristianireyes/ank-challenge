@@ -8,6 +8,7 @@ export const GET_CITIES = gql`
       weather {
         summary {
           icon
+          description
         }
         temperature {
           actual

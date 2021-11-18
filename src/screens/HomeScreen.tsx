@@ -7,18 +7,14 @@ import Loading from '../components/Loading';
 import ScreenView from '../components/ScreenView';
 import { CITIES } from '../utils/constants';
 import { GET_CITIES } from '../queries/getCitiesById';
-import { City } from '../types/city';
-
-const queryVars = {
-  variables: {
-    cities_id: CITIES,
-  },
-};
+import { CityLite } from '../types/city';
 
 export default function HomeScreen({ navigation }) {
-  const { loading, data } = useQuery(GET_CITIES, queryVars);
   const [cities, setCities] = useState([]);
-  const handleNavigate = (item: City) => {
+  const { loading, data } = useQuery(GET_CITIES, {
+    variables: { cities_id: CITIES },
+  });
+  const handleNavigate = (item: CityLite) => {
     navigation.navigate('summary', item);
   };
 

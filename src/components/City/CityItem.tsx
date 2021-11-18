@@ -1,19 +1,17 @@
 import React from 'react';
-import { View, StyleSheet, TouchableHighlight } from 'react-native';
+import { View, TouchableHighlight } from 'react-native';
 import { Card } from 'react-native-paper';
+import { CityLite } from '../../types/city';
+import { toCapitalize } from '../../utils/toCapitalize';
 import WeatherIcon from '../Weather/WeatherIcon';
 
-const styles = StyleSheet.create({
-  item: {
-    marginVertical: 8,
-    marginHorizontal: 16,
-  },
-});
+interface CityItemProps {
+  city: CityLite;
+  onPress: (city: CityLite) => void;
+}
 
-const temperatureToString = (temperature: number) => `Temp: ${temperature}`;
-
-const CityItem = ({ city, onPress }) => (
-  <View style={styles.item}>
+const CityItem = ({ city, onPress }: CityItemProps) => (
+  <View style={{ marginVertical: 8, marginHorizontal: 16 }}>
     <Card>
       <TouchableHighlight
         activeOpacity={0.6}
@@ -22,7 +20,7 @@ const CityItem = ({ city, onPress }) => (
       >
         <Card.Title
           title={city.name}
-          subtitle={temperatureToString(city.weather.temperature.actual)}
+          subtitle={toCapitalize(city.weather.summary.description)}
           left={() => <WeatherIcon id={city.weather.summary.icon} />}
         />
       </TouchableHighlight>
