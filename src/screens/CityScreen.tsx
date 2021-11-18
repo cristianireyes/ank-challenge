@@ -1,8 +1,9 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
 import { useQuery } from '@apollo/client';
 import { GET_CITY } from '../queries/getCityByName';
 import Loading from '../components/Loading';
+import ScreenView from '../components/ScreenView';
+import CityDetail from '../components/City/CityDetail';
 
 export default function CityScreen({ route }) {
   const { loading, data } = useQuery(GET_CITY, {
@@ -10,16 +11,6 @@ export default function CityScreen({ route }) {
   });
 
   return (
-    <View style={style.container}>
-      {loading ? <Loading /> : <Text>{data.city.name}</Text>}
-    </View>
+    <ScreenView>{loading ? <Loading /> : <CityDetail city={data.city} />}</ScreenView>
   );
 }
-
-const style = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
