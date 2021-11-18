@@ -1,17 +1,4 @@
-export type City = {
-  id: number;
-  name: string;
-  country: string;
-  coord: Coordinates;
-  weather: Weather;
-};
-
-type Coordinates = {
-  lon: number;
-  lat: number;
-};
-
-type Weather = {
+export type Weather = {
   summary: Summary;
   temperature: Temperature;
   wind: Wind;
@@ -19,25 +6,25 @@ type Weather = {
   timestamp: number;
 };
 
-type Wind = {
+export type Wind = {
   speed: number;
   deg: number;
 };
 
-type Temperature = {
+export type Temperature = {
   actual: number;
   feelsLike: number;
   min: number;
   max: number;
 };
 
-type Clouds = {
+export type Clouds = {
   all: number;
   visibility: number;
   humidity: number;
 };
 
-type Summary = {
+export type Summary = {
   title: string;
   description: string;
   icon: string;
