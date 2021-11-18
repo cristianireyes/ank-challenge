@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, StyleSheet, TouchableHighlight } from 'react-native';
 import { Card } from 'react-native-paper';
-import WeatherIcon from './WeatherIcon';
+import WeatherIcon from '../Weather/WeatherIcon';
 
 const styles = StyleSheet.create({
   item: {

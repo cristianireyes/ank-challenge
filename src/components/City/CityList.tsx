@@ -1,6 +1,6 @@
 import React from 'react';
 import { FlatList } from 'react-native';
-import { City } from '../models/city.model';
+import { City } from '../../types/city';
 import CityItem from './CityItem';
 
 interface CitiesProps {
