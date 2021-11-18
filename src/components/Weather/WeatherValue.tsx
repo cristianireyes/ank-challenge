@@ -17,11 +17,7 @@ const WeatherValue = ({
     <Text style={{ color: color, fontWeight: '700', fontSize: 16, lineHeight: 16 }}>
       {formatNumber(value)}
     </Text>
-    {unit && (
-      <Unit color={color} size={10}>
-        {unit}
-      </Unit>
-    )}
+    {unit && <Unit value={unit} color={color} size={10} />}
   </Row>
 );
 export default WeatherValue;

@@ -33,7 +33,7 @@ const TemperatureContent = ({
   <Column>
     <Row>
       <Text style={styles.actual}>{formatNumber(temperature.actual)}</Text>
-      <Unit>°C</Unit>
+      <Unit value="°C" />
     </Row>
     <Row>
       <Row style={styles.min}>
