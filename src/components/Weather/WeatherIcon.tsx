@@ -8,10 +8,10 @@ const styles = StyleSheet.create({
   },
 });
 
-const WeatherIcon = ({ id }: { id: string }) => (
+const WeatherIcon = ({ id, size = 40 }: { id: string; size?: number }) => (
   <Avatar.Image
     style={styles.icon}
-    size={40}
+    size={size}
     source={{ uri: `http://openweathermap.org/img/wn/${id}@2x.png` }}
   />
 );
