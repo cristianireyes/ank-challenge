@@ -2,6 +2,18 @@
 
 Para este desafío se solicita consumir una API de clima hecha en graphql. Se deberá mostrar el listado de ciudades indicadas en un array inicial, y al presionar en una, mostrar un detalle más amplio para cada una.
 
+# Tecnologías implementadas
+
+- React Native con Expo
+- Typescript
+- GraphQL con ApolloClient
+- Styled Components
+- GH Actions (CI/CD)
+- Eslint, Prettier & Husky (Linting)
+- Jest & Testing Library (Tests)
+
+> Demo: https://expo.dev/@ciscodev/ank-challenge
+
 # Requerimientos mínimos
 
 - Usar typescript
