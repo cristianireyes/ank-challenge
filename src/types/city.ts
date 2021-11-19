@@ -22,7 +22,7 @@ export type CityLite = {
   };
 };
 
-type Coordinates = {
+export type Coordinates = {
   lon: number;
   lat: number;
 };
