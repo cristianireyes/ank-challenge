@@ -2,9 +2,9 @@ import React from 'react';
 import { View } from 'react-native';
 import { Divider } from 'react-native-paper';
 import { Weather } from '../../types/weather';
-import Row from '../Row';
-import Summary from './Summary';
 import Temperature from './Temperature';
+import Summary from './Summary';
+import Row from '../Row';
 
 const WeatherContent = ({ weather }: { weather: Weather }) => (
   <View>

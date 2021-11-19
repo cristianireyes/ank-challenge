@@ -3,15 +3,13 @@ import { List } from 'react-native-paper';
 import { Clouds, Temperature, Wind } from '../../types/weather';
 import WeatherValue from './WeatherValue';
 
-const Summary = ({
-  clouds,
-  temperature,
-  wind,
-}: {
+interface SummaryProps {
   clouds: Clouds;
   temperature: Temperature;
   wind: Wind;
-}) => (
+}
+
+const Summary = ({ clouds, temperature, wind }: SummaryProps) => (
   <>
     <List.Item
       title="Viento"
